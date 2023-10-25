@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5149270112548401700}
   - component: {fileID: 7157771374829052012}
   - component: {fileID: 4339114866597322443}
+  - component: {fileID: -3211091093629213305}
   m_Layer: 0
   m_Name: stone_trigger_1
   m_TagString: Untagged
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7343452, y: 1.83}
   m_EdgeRadius: 0
+--- !u!114 &-3211091093629213305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278356498079398090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89831ee850cf81646aa91921d30ce0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

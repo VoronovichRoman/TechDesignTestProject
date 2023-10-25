@@ -44,10 +44,8 @@ public class hero : MonoBehaviour, IPointerClickHandler
     }
     private void HorizontalMovement(float destenation)
     {
-
         Vector3 tempPosition = this.transform.position;
         tempPosition.x = Mathf.MoveTowards(tempPosition.x, destenation, _moveSpeed * Time.deltaTime);
-
         this.transform.position = tempPosition;
         if (this.transform.position.x >= destenation && _isFacingRight)
         {

@@ -16,4 +16,14 @@ public class chest_click_event : MonoBehaviour, IPointerClickHandler
     {
         _animator = GetComponent<Animator>();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _animator.SetTrigger("isPickUp");
+        _hero.GetComponent<hero>().Move(this.transform.position.x);
+    }
+
+    private void DestroyChest()
+    {
+        Destroy(gameObject);
+    }
 }
