@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 public class hero : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private float _moveSpeed;
+    [SerializeField] private GameObject _sooundManager;
     private bool _moveIsActive;
     private float _destenation;
     private Animator _anim;
@@ -12,9 +14,10 @@ public class hero : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         _anim.SetTrigger("isAttack");
+        _sooundManager.GetComponent<sound_manager>().SwordAttackSound();
     }
     void Start()
-    {
+    {    
         _moveIsActive = false;
         _anim = GetComponent<Animator>();
         _destenation = 0f;

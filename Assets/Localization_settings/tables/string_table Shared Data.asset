@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: to_the_woods
     m_Metadata:
       m_Items: []
+  - m_Id: 3436141805568
+    m_Key: to_the_cave
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

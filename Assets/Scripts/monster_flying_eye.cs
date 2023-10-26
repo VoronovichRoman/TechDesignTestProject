@@ -5,11 +5,12 @@ using UnityEngine.EventSystems;
 public class monster_flying_eye : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject _hero;
-    public string _animationName;
+    [SerializeField] private string _animationTriggerName;
+    [SerializeField] private GameObject _sooundManager;
     private Animator _animator;
     public void OnPointerClick(PointerEventData eventData)
     {
-        _animator.SetTrigger(_animationName);
+        MonsterFlyingEyeActivation();
     }
     void Start()
     {
@@ -23,7 +24,19 @@ public class monster_flying_eye : MonoBehaviour, IPointerClickHandler
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _hero.GetComponent<Animator>().SetTrigger("isAttack");
-        _hero.GetComponent<hero>().Move(this.transform.position.x);
         _animator.SetTrigger("isDead");
+        _sooundManager.GetComponent<sound_manager>().SwordAttackSound();
+        _sooundManager.GetComponent<sound_manager>().SwordHitSound();
+        _hero.GetComponent<hero>().Move(this.transform.position.x);        
+    }
+
+    public void MonsterFlyingEyeActivation()
+    {
+        _animator.SetTrigger(_animationTriggerName);
+        _sooundManager.GetComponent<sound_manager>().FlyingEyeIsFlying();
+        if (_animationTriggerName == "isFlyOnScreen")
+        {
+            _sooundManager.GetComponent<sound_manager>().MonsterFlyOnScreenSound();
+        }
     }
 }

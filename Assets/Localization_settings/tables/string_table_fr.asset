@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: DANS LA FORET
     m_Metadata:
       m_Items: []
+  - m_Id: 3436141805568
+    m_Localized: DANS LA GROTTE
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
